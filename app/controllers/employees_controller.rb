@@ -8,6 +8,12 @@ class EmployeesController < ApplicationController
   def show
   end
 
+  def sub_employees
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def add_boss
     @employee.boss_id = params[:id]
     respond_to do |format|

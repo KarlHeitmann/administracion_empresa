@@ -15,7 +15,11 @@
       id="employee-<%= employee.id %>-boss"></div>
   </td>
   <td>
-    <%= link_to 'View employees', '#', remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700" %>
+    <%= link_to 'View employees',
+      employee_subs_path(employee, 0),
+      remote: true,
+      id: "subemployee-from-#{employee.id}",
+      class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700" %>
   </td>
   <td>
   </td>
