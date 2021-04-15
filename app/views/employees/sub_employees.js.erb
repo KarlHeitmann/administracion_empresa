@@ -1,2 +1,4 @@
-console.log("Hi, I'm Sub Employees, employee: ", <%= @employee.id %>);
+console.log("Hi, I'm Sub Employees, employee: ", <%= @employee.id %>)
+
+console.log("<%= escape_javascript @sub_employees.map {|employee| employee.email} %>")
 
