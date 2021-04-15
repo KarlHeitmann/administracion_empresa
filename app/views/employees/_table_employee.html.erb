@@ -3,13 +3,20 @@
   <td><%= image_tag employee.picture, size: "64x64" %></td>
   <td><%= employee.email %></td>
   <td>
-    <%= link_to 'View boss', '#', remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700" %>
+    <% if employee.boss.nil? %>
+      <h1>No tiene</h1>
+      <%= button_to 'Agregar jefe', employee_bosses_path(employee), remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
+    <% else %>
+      <%= image_tag employee.boss.picture, size: "32x32" %>
+      <%= button_to 'Cambiar jefe', employee_bosses_path(employee), remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
+    <% end %>
+    <div
+      class="bg-gray-200 rounded-md ring-1"
+      id="employee-<%= employee.id %>-boss"></div>
   </td>
   <td>
     <%= link_to 'View employees', '#', remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700" %>
   </td>
   <td>
-    <%= button_to 'Agregar jefe', employee_bosses_path(employee), remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
-    <div id="employee-<%= employee.id %>-boss"></div>
   </td>
 </tr>

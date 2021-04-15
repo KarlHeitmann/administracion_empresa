@@ -1,7 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, except: [:index]
   def index
-    @employees = Employee.all
+    @employees = Employee.all.order(created_at: :asc)
     @employee = Employee.new
   end
 
@@ -9,6 +9,10 @@ class EmployeesController < ApplicationController
   end
 
   def add_boss
+    @employee.boss_id = params[:id]
+    respond_to do |format|
+      format.js
+    end
   end
 
   def bosses
