@@ -8,13 +8,11 @@ class Employee < ApplicationRecord
   belongs_to :boss, class_name: "Employee", optional:true
 
   def search_sub_employees_level(level)
-    # puts "level: #{level}"
-    puts "I'm #{self.name} - level: #{level}"
     if (level > 0)
-      self.employees.each {|employee| puts employee.name}
-      return self.employees + self.employees.map {|employee| employee.search_sub_employees_level(level - 1)}
+      my_employees = self.employees
+      sub_employees = self.employees.map {|employee| employee.search_sub_employees_level(level - 1)}
+      return my_employees + sub_employees.flatten(1)
     else
-      self.employees.each {|employee| puts employee.name}
       return self.employees
     end
   end
