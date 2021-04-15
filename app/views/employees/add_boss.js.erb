@@ -1,0 +1,7 @@
+console.log("Hi, I'm add_boss. Employee: ", <%= @employee.id %>)
+var employee_select_box = document.querySelector('#employee-<%= @employee.id %>-boss')
+<% if @employee.save %>
+  employee_select_box.innerHTML = ''
+<% else %>
+  employee_select_box.innerHTML = "<%= escape_javascript(render partial: 'employees/select_boss', locals: {employee: @employee}) %>"
+<% end %>
