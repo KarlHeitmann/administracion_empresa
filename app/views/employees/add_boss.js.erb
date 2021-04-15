@@ -1,1 +1,5 @@
 console.log("Hi, I'm Add Boss. Employee: ", <%= @employee.id %>)
+
+var employee_select_box = document.querySelector('#employee-<%= @employee.id %>-boss')
+employee_select_box.innerHTML = "<%= escape_javascript(render partial: 'employees/select_boss', locals: {employee: @employee}) %>"
+// employee_select_box.innerHTML = "<div>Bla bla bla</div>"
