@@ -55,14 +55,10 @@
       </div>
       <div class="py-6 px-5 space-y-6">
         <div>
-          <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-            Sign up
-          </a>
+          <%= link_to 'Sign up', new_employee_session_path, class: 'w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700' %>
           <p class="mt-6 text-center text-base font-medium text-gray-500">
             Existing customer?
-            <a href="#" class="text-indigo-600 hover:text-indigo-500">
-              Sign in
-            </a>
+            <%= link_to 'Sign in', new_employee_registration_path, class: 'text-indigo-600 hover:text-indigo-500'%>
           </p>
         </div>
       </div>
