@@ -10,11 +10,7 @@
   </thead>
   <tbody>
     <% @employees.each do |employee| %>
-      <tr class="bg-emerald-200">
-        <td><%= employee.name %></td>
-        <td><%= image_tag employee.picture, size: "64x64" %></td>
-        <td><%= employee.email %></td>
-      </tr>
+      <%= render 'table_employee', employee: employee %>
     <% end %>
   </tbody>
 </table>
