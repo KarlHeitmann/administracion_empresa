@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
   end
 
   def add_boss
-    @employee.boss_id = params[:id]
+    @employee.boss_id = params[:boss_id]
     respond_to do |format|
       format.js
     end
