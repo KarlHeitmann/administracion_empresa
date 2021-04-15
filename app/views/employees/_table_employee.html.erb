@@ -3,7 +3,7 @@
   <td><%= image_tag employee.picture, size: "64x64" %></td>
   <td><%= employee.email %></td>
   <td>
-    <%= button_to 'Agregar jefe', employee_boss_path(employee), remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
+    <%= button_to 'Agregar jefe', employee_bosses_path(employee), remote: true, class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
     <div id="employee-<%= employee.id %>-boss"></div>
   </td>
 </tr>

@@ -9,6 +9,11 @@ class EmployeesController < ApplicationController
   end
 
   def add_boss
+  end
+
+  def bosses
+    @employees = Employee.where("id != ?", @employee.id).pluck(:name, :id)
+    # puts @employees
     respond_to do |format|
       format.js
     end
