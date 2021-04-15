@@ -5,17 +5,17 @@
 
   <div class="field">
     <%= f.label :name, "Nombre" %><br />
-    <%= f.text_field :name, autocomplete: "Nombre" %>
+    <%= f.text_field :name, class: "form-input px-4 py-1 rounded-md", autocomplete: "Nombre" %>
   </div>
 
   <div class="field">
     <%= f.label :picture, "Foto url" %><br />
-    <%= f.text_field :picture, autocomplete: "Foto url" %>
+    <%= f.text_field :picture, class: "form-input px-4 py-1 rounded-md", autocomplete: "Foto url" %>
   </div>
 
   <div class="field">
     <%= f.label :email, "Email" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, class: "form-input px-4 py-1 rounded-md", autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -23,12 +23,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, class: "form-input px-4 py-1 rounded-md", autocomplete: "new-password" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, class: "form-input px-4 py-1 rounded-md", autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
