@@ -2,3 +2,11 @@ console.log("Hi, I'm Sub Employees, employee: ", <%= @employee.id %>)
 
 console.log("<%= escape_javascript @sub_employees.map {|employee| employee.email} %>")
 
+var container_subemployees = document.querySelector('#employee-<%= @employee.id %>-subemployee-list')
+
+<% @sub_employees.each do |sub_employee| %>
+  var employee = document.createElement('div')
+  employee.innerText = '<%= j sub_employee.name %>'
+  container_subemployees.appendChild(employee)
+<% end %>
+
