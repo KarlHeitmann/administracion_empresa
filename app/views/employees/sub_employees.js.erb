@@ -5,8 +5,15 @@ console.log("<%= escape_javascript @sub_employees.map {|employee| employee.email
 var container_subemployees = document.querySelector('#employee-<%= @employee.id %>-subemployee-list')
 
 <% @sub_employees.each do |sub_employee| %>
-  var employee = document.createElement('div')
-  employee.innerText = '<%= j sub_employee.name %>'
-  container_subemployees.appendChild(employee)
+  var employee_container = document.createElement('div')
+  var employee_data = document.createElement('p')
+  employee_data.innerText = '<%= j sub_employee.name %>'
+  employee_container.appendChild(employee_data)
+  var employee_img = document.createElement('img')
+  employee_img.setAttribute('src', '<%= j sub_employee.picture %>')
+  employee_container.appendChild(employee_img)
+  //console.log('<%= j sub_employee.picture %>')
+  //employee_img.attr('src', '<%= j sub_employee.picture %>')
+  container_subemployees.appendChild(employee_container)
 <% end %>
 
