@@ -1,0 +1,39 @@
+<h2>Registro</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name, "Nombre" %><br />
+    <%= f.text_field :name, class: "form-input px-4 py-1 rounded-md", autocomplete: "Nombre" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture, "Foto url" %><br />
+    <%= f.text_field :picture, class: "form-input px-4 py-1 rounded-md", autocomplete: "Foto url" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "Email" %><br />
+    <%= f.email_field :email, class: "form-input px-4 py-1 rounded-md", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Contraseña" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, class: "form-input px-4 py-1 rounded-md", autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+    <%= f.password_field :password_confirmation, class: "form-input px-4 py-1 rounded-md", autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registro", class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
