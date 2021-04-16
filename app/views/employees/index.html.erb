@@ -11,24 +11,7 @@
   </thead>
   <tbody>
     <% @employees.each do |employee| %>
-      <tr class="bg-emerald-200">
-        <td><%= employee.employees.empty? ? "no jefe: #{employee.name}" : "<strong>JEFE #{employee.name}</strong>".html_safe %></td>
-        <td><%= image_tag employee.picture, size: "64x64" %></td>
-        <td><%= employee.email %></td>
-        <td>
-          <div id="container-sub-employees-<%= employee.id %>">
-            <%= render 'view_employees', employee: employee %>
-          </div>
-          <%
-=begin%>
- <% employee.employees.each do |e| %>
-            <%= image_tag e.picture, size: "64x64" %>
-          <% end %>
-<%
-=end%>
-        </td>
-
-      </tr>
+      <%= render 'view_employees', employee: employee %>
     <% end %>
   </tbody>
 </table>
