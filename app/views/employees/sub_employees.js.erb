@@ -1,0 +1,4 @@
+console.log("HOLA, SOY EMPLOYEE", '<%= j @employee.id %>')
+var container_sub_employees = document.querySelector("#container-sub-employees-<%= @employee.id %>")
+
+container_sub_employees.innerHTML = '<%= j @employee.email %>'
