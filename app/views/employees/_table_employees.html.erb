@@ -1,0 +1,15 @@
+<table class="table-fixed">
+  <thead>
+    <tr>
+      <td class="w-1/2">Nombre</td>
+      <td class="w-1/4">Foto</td>
+      <td class="w-1/4">Email</td>
+      <td class="w-1/4">Empleados</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% employees.each do |employee| %>
+      <%= render 'view_employees', employee: employee %>
+    <% end %>
+  </tbody>
+</table>

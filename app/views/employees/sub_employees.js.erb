@@ -1,4 +1,17 @@
 console.log("HOLA, SOY EMPLOYEE", '<%= j @employee.id %>')
 var container_sub_employees = document.querySelector("#container-sub-employees-<%= @employee.id %>")
 
-container_sub_employees.innerHTML = '<%= j @employee.email %>'
+
+/*
+<% @sub_employees.each do |sub_employee| %>
+  var div_sub_employee = document.createElement('div')
+  div_sub_employee.innerText = '<%= j sub_employee.email %>'
+
+  container_sub_employees.appendChild(div_sub_employee)
+<% end %>
+  */
+
+
+container_sub_employees
+container_sub_employees.innerHTML = '<%= j render 'mini_table_employees', employees: @sub_employees %>'
+
