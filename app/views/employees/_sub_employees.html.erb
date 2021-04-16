@@ -1,0 +1,6 @@
+<% sub_employees.each do |sub_employee| %>
+  <div>
+    <p><%= sub_employee.email %></p>
+    <%= image_tag sub_employee.picture, size: '32x32' %>
+  </div>
+<% end %>
