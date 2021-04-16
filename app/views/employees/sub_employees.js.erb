@@ -11,5 +11,7 @@ var container_sub_employees = document.querySelector("#container-sub-employees-<
 <% end %>
   */
 
-container_sub_employees.innerHTML = '<%= j render 'sub_employees', sub_employees: @sub_employees %>'
+
+container_sub_employees
+container_sub_employees.innerHTML = '<%= j render 'table_employees', employees: @sub_employees %>'
 
