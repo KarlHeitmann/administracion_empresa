@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
 
   def sub_employees
     @sub_employees = @employee.search_sub_employees_level params[:level].to_i
+    @level = params[:level].to_i + 1
     respond_to do |format|
       format.js
     end
