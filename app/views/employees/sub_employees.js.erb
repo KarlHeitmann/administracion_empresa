@@ -4,4 +4,5 @@ console.log("<%= escape_javascript @sub_employees.map {|employee| employee.email
 
 var container_subemployees = document.querySelector('#employee-<%= @employee.id %>-subemployee-list')
 
-container_subemployees.innerHTML = "<%= escape_javascript(render partial: 'employees/list_subemployees', locals: {sub_employees: @sub_employees}) %>"
+
+container_subemployees.innerHTML = "<%= escape_javascript(render partial: 'employees/list_subemployees', locals: {employee: @employee, sub_employees: @sub_employees, level: 0}) %>"

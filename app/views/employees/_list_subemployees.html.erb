@@ -1,6 +1,14 @@
-<% sub_employees.each do |sub_employee| %>
-  <div>
-    <p><%= sub_employee.name %></p>
-    <%= image_tag sub_employee.picture, size: '32x32' %>
-  </div>
-<% end %>
+<div id="subemployees-<%= employee.id %>-level-<%= level %>">
+  <%= link_to 'View employees',
+    employee_subs_path(employee, level),
+    remote: true,
+    id: "subemployee-from-#{employee.id}",
+    class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700" %>
+    <div id="employee-<%= employee.id %>-subemployee-list"></div>
+  <% sub_employees.each do |sub_employee| %>
+    <div>
+      <p><%= sub_employee.name %></p>
+      <%= image_tag sub_employee.picture, size: '32x32' %>
+    </div>
+  <% end %>
+</div>
