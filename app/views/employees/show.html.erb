@@ -1,6 +1,15 @@
-<%= image_tag @employee.picture, class: "inline-block h-20 w-20 rounded-full ring-2 ring-white" %>
-
-<div id="tasks-aggregator" class="my-5">
-  <%= link_to 'Agregar tarea', employee_tasks_path(@employee), remote: true, class: "btn-indigo" %>
+<div class="grid grid-cols-2 gap-4">
+  <div>
+    <%= image_tag @employee.picture, class: "inline-block h-20 w-20 rounded-full ring-2 ring-white" %>
+    <div id="tasks-aggregator" class="my-5">
+      <%= link_to 'Agregar tarea', employee_tasks_path(@employee), remote: true, class: "btn-indigo" %>
+    </div>
+  </div>
+  <div>
+    <% @employee.tasks.each do |task| %>
+      <div><%= task.title %></div>
+    <% end %>
+  </div>
 </div>
+
 
