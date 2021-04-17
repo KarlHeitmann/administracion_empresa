@@ -11,4 +11,7 @@ class Employee < ApplicationRecord
   # Ademas, recuerde que la columna boss_id es OPCIONAL. En caso de que alguien no tenga jefe.
   belongs_to :boss, class_name: "Employee", optional:true
 
+  has_many :employee_tasks
+  has_many :tasks, through: :employee_tasks
+
 end
