@@ -1,0 +1,5 @@
+console.log("tasks#new")
+var new_container = document.querySelector('#task-new')
+
+new_container.innerHTML = '<%= j render partial: 'tasks/form', locals: {task: @task} %>'
+

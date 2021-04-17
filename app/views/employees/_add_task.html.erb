@@ -1,0 +1,25 @@
+<%= form_with(url: employee_task_path(employee), local: false) do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+
+  </div>
+  <%= form.select :task_id, tasks, class: "form-input px-4 py-1 rounded-md" %>
+
+  <div class="actions">
+    <%= form.submit data: {disable_with: 'submitting...'},
+      class: "my-3 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
+      %>
+  </div>
+<% end %>
+

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+<div id="task-new" class="my-5" >
+  <%= link_to 'New Task', new_task_path, remote: true, class: "btn-indigo" %>
+</div>
+
+<%= render 'table_tasks', tasks: @tasks %>

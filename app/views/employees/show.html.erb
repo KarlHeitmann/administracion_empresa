@@ -1,0 +1,13 @@
+<div class="grid grid-cols-2 gap-4 my-5">
+  <div>
+    <%= image_tag @employee.picture, class: "inline-block h-20 w-20 rounded-full ring-2 ring-white" %>
+    <div id="tasks-aggregator" class="my-5">
+      <%= link_to 'Agregar tarea', employee_tasks_path(@employee), remote: true, class: "btn-indigo" %>
+    </div>
+  </div>
+  <div class="my-5" id="table-tasks">
+    <%= render 'tasks/table_tasks', tasks: @employee.tasks %>
+  </div>
+</div>
+
+

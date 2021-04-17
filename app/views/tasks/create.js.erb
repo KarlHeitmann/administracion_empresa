@@ -1,0 +1,6 @@
+var elemento = document.querySelector('table tbody')
+elemento.insertAdjacentHTML('beforeend', "<%= escape_javascript(render partial: 'tasks/task', locals: {task: @task}) %>")
+
+var content = document.querySelector('#task-new')
+content.innerHTML = '<%= link_to 'New Task', new_task_path, remote: true, class: "btn-indigo" %>'
+

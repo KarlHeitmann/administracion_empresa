@@ -1,0 +1,7 @@
+console.log("Hurray, task was created")
+
+var task_aggregator = document.querySelector('#tasks-aggregator')
+task_aggregator.innerHTML = '<%= j link_to 'Agregar tarea', employee_tasks_path(@employee), remote: true, class: "btn-indigo" %>'
+
+var table_tasks = document.querySelector('#table-tasks')
+table_tasks.innerHTML = '<%= j render 'tasks/table_tasks', tasks: @employee.tasks %>'
