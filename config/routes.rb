@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'employees/index'
+  resources :employees, only: [:index, :show]
   devise_for :employees
   get 'sub_employees/:id', to: 'employees#sub_employees', as: 'sub_employees'
 

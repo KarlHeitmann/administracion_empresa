@@ -5,15 +5,13 @@ class EmployeesController < ApplicationController
   end
 
   def sub_employees
-    puts "########################"
-    puts "########################"
-    puts "########################"
-    puts "########################"
-    puts @employee.email
     @sub_employees = @employee.employees
     respond_to do |format|
       format.js
     end
+  end
+
+  def show
   end
 
   private
