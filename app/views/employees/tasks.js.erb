@@ -1,0 +1,6 @@
+console.log("HI, I'm tasks#index")
+
+
+var tasks_aggregator = document.querySelector('#tasks-aggregator')
+
+tasks_aggregator.innerHTML = '<%= j render partial: 'employees/add_task', locals: {employee: @employee, tasks: @tasks} %>'

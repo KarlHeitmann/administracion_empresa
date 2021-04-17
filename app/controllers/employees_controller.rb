@@ -14,6 +14,20 @@ class EmployeesController < ApplicationController
   def show
   end
 
+  def tasks
+    @tasks = Task.all.pluck(:title, :id)
+  end
+
+  def task_create
+    @task = Task.find(params[:task_id])
+    puts "###########"
+    puts "###########"
+    puts "###########"
+    puts "###########"
+    puts @task
+    @employee.tasks << @task
+  end
+
   private
     def set_employee
       @employee = Employee.find(params[:id])
