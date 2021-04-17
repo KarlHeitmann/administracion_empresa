@@ -5,10 +5,8 @@
       <%= link_to 'Agregar tarea', employee_tasks_path(@employee), remote: true, class: "btn-indigo" %>
     </div>
   </div>
-  <div>
-    <% @employee.tasks.each do |task| %>
-      <div><%= task.title %></div>
-    <% end %>
+  <div class="my-5">
+    <%= render 'tasks/table_tasks', tasks: @employee.tasks %>
   </div>
 </div>
 
