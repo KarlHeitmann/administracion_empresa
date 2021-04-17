@@ -13,6 +13,10 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /tasks/1/edit
@@ -27,6 +31,7 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to @task, notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @task.errors, status: :unprocessable_entity }
